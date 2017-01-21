@@ -1,0 +1,292 @@
+package assignment;
+
+import javax.swing.JOptionPane;
+public class assignment {
+
+	public static void main(String[] args) {
+
+		while (true){
+			String choice=JOptionPane.showInputDialog("Please Enter one of the following options \n"
+					+ "A for coverting decimal to binary number \n"
+					+ "B for coverting binary number to decimal number \n"
+					+ "C for coverting Hexa number to decimal number \n"
+					+ "D for coverting decimal to Hexa number \n"
+					+ "E for getting one's compliment of binary number \n"
+					+ "F for getting two's compliment of binary number \n"
+					+ "G Libary of boolen alegbraic rules \n"
+					+ "Any other value will result in exiting the program.");
+			String c="";
+			choice=choice.toUpperCase();
+			switch(choice){
+			case "A":
+			{
+				String s=JOptionPane.showInputDialog("Enter integer in decimal form");
+				c=JOptionPane.showInputDialog("The Binary form of decimal number " + s + " is: " + decimalToBinary(s) +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+
+				break;
+			}
+			case "B":
+			{
+				String s=JOptionPane.showInputDialog("Enter number in binary form");
+				c=JOptionPane.showInputDialog("The Decimal form of binary number " + s + " is: " + binaryToDecimal(s) +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+
+				break;
+			}
+			case "C":
+			{
+				String s=JOptionPane.showInputDialog("Enter Hexa decimal number");
+				c=JOptionPane.showInputDialog("The Decimal form of Hexa Decimal number " + s + " is: " + HexToDecimal(s) +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+				break;
+			}
+			case "D":
+			{
+				String s=JOptionPane.showInputDialog("Enter Decimal Number");
+
+				c=JOptionPane.showInputDialog("The Hex decimal form of  Decimal number " + s + " is: " + DecimalToHex(s) +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+
+				break;
+			}
+			case "E":
+			{
+				String s=JOptionPane.showInputDialog("Enter Binary Number:");
+
+				c=JOptionPane.showInputDialog("One's compliment of binary number " + s + " is: " + oneCompliment(s) +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+				break;
+			}
+			case "F":
+			{
+				String s=JOptionPane.showInputDialog("Enter Binary Number:");
+				String s2=oneCompliment(s);
+				c=JOptionPane.showInputDialog("Two's compliment of binary number " + s + " is: " + binaryAdd(s2, "1") +
+						"\n Please enter # to go back to main menu or press any other key to exit");
+
+				if(!c.equalsIgnoreCase("#"))
+					System.exit(0);
+
+				break;
+			}
+			case "G":
+			{
+				String option= JOptionPane.showInputDialog("Please enter one of following chocies \n"
+						+ "1. Cumulative Law \n"
+						+ "2. Associate Law \n"
+						+ "3. Distributive Law \n"
+						+ "4. Identity Law \n"
+						+ "5. Redundance Law \n"
+						+ "6. De Morgan's Theorem");
+				switch(Integer.valueOf(option)){
+				case 1:
+				{
+					c=JOptionPane.showInputDialog(" Cumulative Laws:\n"
+							+ "T1. a) A+B = B+A \n"
+							+ "b) AB=BA"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}
+				case 2:
+				{
+					c=JOptionPane.showInputDialog(" Assosicate Laws:\n"
+							+ "T2. a) (A+B)+C = A+(B+C) \n"
+							+ "b) (AB)C=A(BC)"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}
+				case 3:
+				{
+					c=JOptionPane.showInputDialog(" Distributive Laws:\n"
+							+ "T3. a) A(B+C) = AB+AC \n"
+							+ " b) A+(BC)=(A+B)(B+C)"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}
+				case 4:
+				{
+					c=JOptionPane.showInputDialog(" Identity Laws:\n"
+							+ "T4. a) A+A= A \n"
+							+ "b) AA=A \n" 
+							+ "T5. a) AB+A~B= A \n" +
+							 "b) (A+B)(A+~B)=A"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}
+				case 5:
+				{
+					c=JOptionPane.showInputDialog(" Redundance Laws:\n"
+							+ "T6. a) A+AB = A \n"
+							+ " b) A(A+B)=A \n"
+							+ "T7. a) 0+A = A \n"
+							+ " b) 0A=0 \n"
+							+ "T8. a) 1+A = 1 \n"
+							+ " b) 1A=A \n"
+							+ "T9. a) A+~A = 1 \n"
+							+ " b) ~AA=0 \n"
+							+ "T10. a) A+~AB = A+B \n"
+							+ " b) A(~A+B)=AB \n"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}
+				
+				case 6:
+				{
+					c=JOptionPane.showInputDialog(" De Morgans Therorem Laws:\n"
+							+ "T11. a) (~A+~B) = ~A~B \n"
+							+ "b) ~A~B=~A+~B"+
+							"\n Please enter # to go back to main menu or press any other key to exit");
+					
+					if(!c.equalsIgnoreCase("#"))
+						System.exit(0);
+					break;
+					
+				}default:
+				{
+					JOptionPane.showMessageDialog(null,"thank you for using the program");
+					System.exit(0);
+				}
+				}
+				break;
+			}
+			default:
+			{
+				JOptionPane.showMessageDialog(null,"thank you for using the program");
+				System.exit(0);
+			}
+			}
+
+		}
+	}
+	private static String decimalToBinary(String s){
+		int n = Integer.parseInt(s, 10);
+		StringBuilder sb = new StringBuilder();
+
+		if (n==0) return "0";
+		int d = 0;
+		while (n > 0){
+			d = n % 2;
+			n /= 2;
+			sb.append(d);
+		}
+		sb = sb.reverse();
+		return sb.toString();
+	}
+
+	private static int HexToDecimal (String s)
+	{
+		String digits = "0123456789ABCDEF";
+		s = s.toUpperCase();
+		int val = 0;
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			int d = digits.indexOf(c);
+			val = 16*val + d;
+		}
+		return val;
+	}
+
+	private static String binaryToDecimal(String s){
+		int degree = 1;
+		int n = 0;
+		for (int k=s.length()-1; k>=0; k--){
+			n += degree * (s.charAt(k) - '0');
+			degree *= 2;
+		}
+		return n + "";
+	}
+
+	private static String DecimalToHex(String s)
+	{
+		String temp=""; 
+		int remainder=0;
+		int number = Integer.parseInt(s);
+		char hexanumbers[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+		while(number>0)
+		{
+			remainder=number%16; 
+			temp=hexanumbers[remainder]+temp; 
+			number=number/16;
+		}
+		return temp;
+	}
+
+	private static String oneCompliment(String s){
+		char c[]=s.toCharArray();
+		String result="";
+		for(int i=0;i<c.length;i++)
+		{
+			if(c[i] == '0')
+				c[i]='1';
+			else
+				c[i]='0';
+			result += String.valueOf(c[i]);
+		}
+		return result;
+	}
+
+	public static String binaryAdd(String s, String s2) {
+		if (s == null || s2 == null) return "";
+		int first = s.length() - 1;
+		int second = s2.length() - 1;
+		StringBuilder sb = new StringBuilder();
+		int c = 0;
+		while (first >= 0 || second >= 0) {
+			int result = c;
+			if (first >= 0) {
+				result += s.charAt(first) - '0';
+				first--;
+			}
+			if (second >= 0) {
+				result += s2.charAt(second) - '0';
+				second--;
+			}
+			c = result >> 1;
+			result = result & 1;
+			sb.append(result == 0 ? '0' : '1');
+		}
+		if (c > 0)
+			sb.append('1');
+
+		sb.reverse();
+		return String.valueOf(sb);
+	}
+
+}
+
